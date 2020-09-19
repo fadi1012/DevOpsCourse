@@ -6,7 +6,6 @@ class MainGame:
     def play():
         live = Live()
         live.welcome("Fadi")
-        live.load_game()
 
 
 def main():
