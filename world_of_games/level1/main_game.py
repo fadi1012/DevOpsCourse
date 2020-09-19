@@ -1,4 +1,4 @@
-from world_of_games.live import Live
+from world_of_games.level1.live import Live
 
 
 class MainGame:
