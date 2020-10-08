@@ -5,7 +5,7 @@ pipeline {
         stage('Create File With Name') {
             steps {
                 script {
-                 status = sh(script: 'NAME=${NAME} ./bash_scripts/createFileWithName.sh', returnStatus: true)
+                 status = sh(script: 'NAME=${NAME} ./bash_scripts/fifthAssignment.sh', returnStatus: true)
                  echo "status is ${status}"
                 }
             }
