@@ -5,7 +5,7 @@ pipeline {
         stage('Create File With Name') {
             steps {
                 script {
-                 status = sh(script: 'NAME=${NAME} ./bash_scripts/fifthAssignment.sh', returnStatus: true)
+                 status = sh(script: 'NAME=${NAME} ./fifthAssignment.sh', returnStatus: true)
                  echo "status is ${status}"
                 }
             }
@@ -15,7 +15,8 @@ pipeline {
             steps {
                 script {
                  echo "sourcing venv"
-                 sh(script: 'cd ${WORKSPACE} && source devopscourse/bin/activate')
+                 status = sh(script: 'NAME=${NAME} ./source_venv.sh', returnStatus: true)
+                 echo ${status}
                  echo "running all selenium tests from fourth assignment"
                  status = sh(script: 'python3 fourth_assignment.sh', returnStatus: true)
                  echo "status is ${status}"
