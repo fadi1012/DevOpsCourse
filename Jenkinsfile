@@ -15,8 +15,7 @@ pipeline {
             steps {
                 script {
                  echo "sourcing venv"
-                 status = sh(script: './source_venv.sh', returnStatus: true)
-                 echo ${status}
+                 sh(script: 'cd ${WORKSPACE} && ./source_venv.sh')
                  echo "running all selenium tests from fourth assignment"
                  status = sh(script: 'python3 fourth_assignment.sh', returnStatus: true)
                  echo "status is ${status}"
