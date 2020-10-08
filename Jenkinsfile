@@ -10,5 +10,17 @@ pipeline {
                 }
             }
         }
+
+          stage('Run Selenium tests') {
+            steps {
+                script {
+                 echo "sourcing venv"
+                 source devopscourse/bin/activate
+                 echo "running all selenium tests from fourth assignment"
+                 status = sh(script: 'python3 fourth_assignment.sh', returnStatus: true)
+                 echo "status is ${status}"
+                }
+            }
+        }
     }
 }
