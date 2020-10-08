@@ -15,6 +15,7 @@ pipeline {
             steps {
                 script {
                  echo "sourcing venv"
+                 python3 -m pip install --upgrade pip
                  sh(script: 'cd ${WORKSPACE} && ./source_venv.sh')
                  echo "running all selenium tests from fourth assignment"
                  status = sh(script: 'cd ${WORKSPACE} && python fourth_assignment.sh', returnStatus: true)
