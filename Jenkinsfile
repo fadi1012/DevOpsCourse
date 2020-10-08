@@ -24,4 +24,16 @@ pipeline {
             }
         }
     }
+
+        post {
+        always {
+            echo "ALWAYS. Runs all the time."
+        }
+        success {
+            echo "SUCCESS"
+        }
+        failure {
+            echo "FAILURE!!"
+        }
+    }
 }
