@@ -11,5 +11,6 @@ script_folder=$(get_script_folder)
 project_root=${script_folder}
 pushd ${project_root}/
 echo "project root is ${project_root}"
+python -m pip install --upgrade pip
 source  ${project_root}/devopscourse/bin/activate
 pip install -r requirements.txt
