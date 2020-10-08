@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Create File With Name') {
+            steps {
+                script {
+                 status = sh(script: 'NAME=${NAME} ./CreateFileWithName.sh', returnStatus: true)
+                 echo "status is ${status}"
+                }
+            }
+        }
+    }
+}
