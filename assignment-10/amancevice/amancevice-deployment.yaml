@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: amancevice-devops
+  name: amancevice-devops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: amancevice-devops
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: amancevice-devops
+    spec:
+      containers:
+      - image: amancevice/superset:0.37.2
+        imagePullPolicy: Always
+        name: amancevice-devops
+        ports:
+          - containerPort: 6000
+
+

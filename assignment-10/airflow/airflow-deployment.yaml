@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: airflow-devops
+  name: airflow-devops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: airflow-devops
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: airflow-devops
+    spec:
+      containers:
+      - image: puckel/docker-airflow:1.10.9
+        imagePullPolicy: Always
+        name: airflow-devops
+        ports:
+          - containerPort: 5000
+
+
